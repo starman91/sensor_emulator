@@ -1,0 +1,118 @@
+{
+  "simulation": {
+    "update_interval_seconds": 1.0,
+    "random_seed": 42
+  },
+  "locations": [
+    {
+      "location_id": "ROOM101",
+      "building_id": "EMAPS",
+      "zone": "HIGH_BAYS"
+    },
+    {
+      "location_id": "ROOM102",
+      "building_id": "EMAPS",
+      "zone": "HIGH_BAYS"
+    }, 
+    {
+      "location_id": "ROOM103",
+      "building_id": "EMAPS",
+      "zone": "HIGH_BAYS"
+    },
+    {
+      "location_id": "ROOM202",
+      "building_id": "EMAPS",
+      "zone": "CLEAN_ROOM"
+    },
+    {
+      "location_id": "ROOM203",
+      "building_id": "EMAPS",
+      "zone": "DRY_ROOM"
+    }
+  ],
+  "sensors": [
+    {
+      "sensor_id": "ROOM101.TEMP",
+      "sensor_type": "temperature",
+      "location_id": "ROOM101",
+      "unit": "degC",
+      "min_value": 18.0,
+      "max_value": 26.0,
+      "initial_value": 22.0,
+      "target_value": 22.0,
+      "noise_level": 0.1,
+      "outdoor": false,
+      "hadjacent": ["ROOM102"],
+      "vhadjacent": []
+   },
+   {
+      "sensor_id": "ROOM102.TEMP",
+      "sensor_type": "temperature",
+      "location_id": "ROOM102",
+      "unit": "degC",
+      "min_value": 18.0,
+      "max_value": 26.0,
+      "initial_value": 22.0,
+      "target_value": 22.0,
+      "noise_level": 0.1,
+      "outdoor": false,
+      "hadjacent": ["ROOM101", "ROOM103"],
+      "vhadjacent": ["ROOM202"]
+    },
+   {
+      "sensor_id": "ROOM103.TEMP",
+      "sensor_type": "temperature",
+      "location_id": "ROOM103",
+      "unit": "degC",
+      "min_value": 18.0,
+      "max_value": 26.0,
+      "initial_value": 22.0,
+      "target_value": 22.0,
+      "noise_level": 0.1,
+      "outdoor": false,
+      "hadjacent": ["ROOM102"],
+      "vhadjacent": ["ROOM203"]
+    },
+    {
+      "sensor_id": "ROOM202.TEMP",
+      "sensor_type": "temperature",
+      "location_id": "ROOM202",
+      "unit": "degC",
+      "min_value": 18.0,
+      "max_value": 26.0,
+      "initial_value": 22.0,
+      "target_value": 22.0,
+      "noise_level": 0.1,
+      "outdoor": false,
+      "hadjacent": ["ROOM203"],
+      "vhadjacent": ["ROOM102"]
+    },
+    {
+      "sensor_id": "ROOM203.TEMP",
+      "sensor_type": "temperature",
+      "location_id": "ROOM203",
+      "unit": "degC",
+      "min_value": 18.0,
+      "max_value": 26.0,
+      "initial_value": 22.0,
+      "target_value": 22.0,
+      "noise_level": 0.1,
+      "outdoor": false,
+      "hadjacent": ["ROOM202"],
+      "vhadjacent": ["ROOM103"]
+    },
+   {
+      "sensor_id": "ROOF.TEMP",
+      "sensor_type": "temperature",
+      "location_id": "ROOF",
+      "unit": "degC",
+      "min_value": -15.0,
+      "max_value": 40.0,
+      "initial_value": 15.0,
+      "target_value": 15.0,
+      "noise_level": 0.5,
+      "outdoor": true,
+      "season": "autumn"
+    }
+  ]
+}
